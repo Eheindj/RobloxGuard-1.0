@@ -1,0 +1,28 @@
+Check if there is toxic content in the user message in the below conversation in accordance with our safety policy. Provide a `toxic` or `non-toxic` rating for the user message. If there is toxic content, also include a list of violated categories from the toxicity taxonomy below.
+
+<BEGIN TOXICITY CATEGORIES>
+- violence graphic
+- sexual
+- violence
+- sexual minors
+- self-harm
+- self-harm intent
+- harassment
+- hate
+- self-harm instructions
+- harassment threatening
+- hate threatening
+<END TOXICITY CATEGORIES>
+
+<BEGIN CONVERSATION>
+user: {prompt}
+<END CONVERSATION>
+
+Provide your toxicity assessment for the above conversation in the following JSON format:
+{{
+  "User Toxicity": "toxic" or "non_toxic",
+  "Toxicity Categories": "comma-separated list of categories if any toxicity is found"
+}}
+
+Do not include anything other than the output JSON in your response.
+Output JSON:
