@@ -380,6 +380,16 @@ class SafetyEvaluator:
                     "violation": data["response_harmfulness"]
                 }
                 eval_dataset.append(entry)
+        elif eval_config["name"] == models.XSTEST:
+            df = datasets.load_dataset(eval_config["eval_dataset"], split="train")
+    
+            eval_dataset = []
+            for data in df:
+                entry = {
+                    "prompt": data['prompt'],
+                    "label": str(data['label']).lower()
+                }
+                eval_dataset.append(entry)
     
         return eval_dataset
 

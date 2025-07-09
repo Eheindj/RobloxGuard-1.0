@@ -1,0 +1,17 @@
+{
+  "name": "xstest",
+
+  "model_path": "Roblox/RoGuard",
+  "base_model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+  "max_output_tokens": 100,
+
+  "eval_prompt": "prompts/xstest.txt",
+  "llm_output_field": "User Safety",
+  "llm_flagged_value": "unsafe",
+
+  "eval_dataset": "Paul/XSTest",
+  "eval_label_field": "label",
+  "eval_flagged_value": "unsafe",
+
+  "output_file": "outputs/xstest.csv"
+}
