@@ -261,16 +261,6 @@ class SafetyEvaluator:
         print(f"Summary metrics written to: {summary_file}")
 
     def load_evaluation_dataset(self, eval_config: Dict[str, Any]) -> list:
-        """
-        Load and format evaluation dataset based on the configuration.
-
-        Args:
-            eval_config: Dictionary containing evaluation configuration including
-                        'name', 'eval_dataset' path, and other parameters
-
-        Returns:
-            List of dictionaries containing 'prompt' and 'prompt_label' fields
-        """
         eval_dataset = []
 
         if eval_config["name"] == models.AEGIS:
@@ -285,7 +275,6 @@ class SafetyEvaluator:
                 else:
                     prompt_label = "safe"
 
-                # Create the JSON structure
                 entry = {
                     "prompt": data['text'],
                     "prompt_label": prompt_label
@@ -304,7 +293,6 @@ class SafetyEvaluator:
                         label = "unsafe"
                         break
 
-                # Create the JSON structure
                 entry = {
                     "prompt": data['prompt'],
                     "prompt_label": label
@@ -315,11 +303,21 @@ class SafetyEvaluator:
     
             eval_dataset = []
             for data in df:
-                # Create the JSON structure
                 entry = {
                     "prompt": data['prompt'],
                     "response": data['response'],
                     "response_label": str(data["is_safe"]).lower()
+                }
+                eval_dataset.append(entry)
+        elif eval_config["name"] == models.ROBLOX:
+            df = datasets.load_dataset(eval_config["eval_dataset"], split='test')
+    
+            eval_dataset = []
+            for data in df:
+                entry = {
+                    "prompt": data['prompt'],
+                    "response": data['response'],
+                    "violation": str(data["violation"]).lower()
                 }
                 eval_dataset.append(entry)
     
@@ -401,6 +399,7 @@ class SafetyEvaluator:
                         "current_metrics": self.metrics.get_metrics_dict()
                     }
                     print("correct:", predicted_unsafe == actual_unsafe)
+                    print()
                 else:
                     # Prepare simplified result data when no labels
                     result_data = {

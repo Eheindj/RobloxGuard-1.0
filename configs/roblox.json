@@ -1,0 +1,17 @@
+{
+  "name": "roblox",
+
+  "model_path": "Roblox/RoGuard",
+  "base_model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+  "max_output_tokens": 100,
+
+  "eval_prompt": "prompts/roblox.txt",
+  "llm_output_field": "Response Safety",
+  "llm_flagged_value": "unsafe",
+
+  "eval_dataset": "Roblox/RoGuard",
+  "eval_label_field": "violation",
+  "eval_flagged_value": "true",
+
+  "output_file": "outputs/roblox.csv"
+}
