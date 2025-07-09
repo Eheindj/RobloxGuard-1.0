@@ -10,7 +10,7 @@
   "llm_flagged_value": "false",
 
   "eval_dataset": "PKU-Alignment/BeaverTails",
-  "eval_label_field": "response_label",
+  "eval_label_field": "is_safe",
   "eval_flagged_value": "false",
 
   "output_file": "outputs/beaverTails.csv"

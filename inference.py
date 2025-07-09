@@ -306,7 +306,7 @@ class SafetyEvaluator:
                 entry = {
                     "prompt": data['prompt'],
                     "response": data['response'],
-                    "response_label": str(data["is_safe"]).lower()
+                    "is_safe": str(data["is_safe"]).lower()
                 }
                 eval_dataset.append(entry)
         elif eval_config["name"] == models.ROBLOX:
@@ -329,6 +329,28 @@ class SafetyEvaluator:
                     "prompt": data['user_input'],
                     "response": data['model_output'],
                     "toxicity": data["toxicity"]
+                }
+                eval_dataset.append(entry)
+        elif eval_config["name"] == models.WILDGUARD_PROMPT:
+            df = datasets.load_dataset(eval_config["eval_dataset"], name='wildguardtest', split='test')
+    
+            eval_dataset = []
+            for data in df:
+                entry = {
+                    "prompt": data['prompt'],
+                    "response": data['response'],
+                    "prompt_harm_label": str(data['prompt_harm_label']).lower()
+                }
+                eval_dataset.append(entry)
+        elif eval_config["name"] == models.WILDGUARD_RESPONSE:
+            df = datasets.load_dataset(eval_config["eval_dataset"], name='wildguardtest', split='test')
+    
+            eval_dataset = []
+            for data in df:
+                entry = {
+                    "prompt": data['prompt'],
+                    "response": data['response'],
+                    "response_harm_label": str(data['response_harm_label']).lower()
                 }
                 eval_dataset.append(entry)
     
