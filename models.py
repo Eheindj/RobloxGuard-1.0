@@ -1,5 +1,6 @@
 ROBLOX = "roblox"
 AEGIS = "aegis"
+AEGIS2 = "aegis2"
 OPENAI_MOD = "openai_mod"
 BEAVERTAILS = "beavertails"
 TOXICCHAT = "toxic_chat"

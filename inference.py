@@ -281,6 +281,18 @@ class SafetyEvaluator:
                     "prompt_label": prompt_label
                 }
                 eval_dataset.append(entry)
+        elif eval_config["name"] == models.AEGIS2:
+            df = datasets.load_dataset(eval_config["eval_dataset"], split='test')
+
+            # Create evaluation dataset in the specified format
+            for data in df:
+                entry = {
+                    "prompt": data['prompt'],
+                    "prompt_label": data['prompt_label'],
+                    "response": data['response'],
+                    "response_label": data['response_label'],
+                }
+                eval_dataset.append(entry)
         elif eval_config["name"] == models.OPENAI_MOD:
             with open(eval_config["eval_dataset"], 'r') as f:
                 df = f.readlines()

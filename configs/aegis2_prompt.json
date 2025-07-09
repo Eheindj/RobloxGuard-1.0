@@ -1,0 +1,17 @@
+{
+  "name": "aegis2",
+
+  "model_path": "Roblox/RoGuard",
+  "base_model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+  "max_output_tokens": 100,
+
+  "eval_prompt": "prompts/aegis.txt",
+  "llm_output_field": "User Safety",
+  "llm_flagged_value": "unsafe",
+
+  "eval_dataset": "nvidia/Aegis-AI-Content-Safety-Dataset-2.0",
+  "eval_label_field": "prompt_label",
+  "eval_flagged_value": "unsafe",
+
+  "output_file": "outputs/aegis2_prompt.csv"
+}
