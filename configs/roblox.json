@@ -9,7 +9,7 @@
   "llm_output_field": "Response Safety",
   "llm_flagged_value": "unsafe",
 
-  "eval_dataset": "Roblox/RoGuard",
+  "eval_dataset": "Roblox/RoGuard-Eval",
   "eval_label_field": "violation",
   "eval_flagged_value": "true",
 
