@@ -312,7 +312,7 @@ class SafetyEvaluator:
                 }
                 eval_dataset.append(entry)
         elif eval_config["name"] == models.BEAVERTAILS:
-            df = datasets.load_dataset(eval_config["eval_dataset"], split='30k_test')
+            df = datasets.load_dataset(eval_config["eval_dataset"], split='330k_test')
     
             eval_dataset = []
             for data in df:
