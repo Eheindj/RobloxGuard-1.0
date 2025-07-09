@@ -1,0 +1,17 @@
+{
+  "name": "beavertails",
+
+  "model_path": "youngwan657/RoGuard-test",
+  "base_model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+  "max_output_tokens": 100,
+
+  "eval_prompt": "prompts/beaverTails.txt",
+  "llm_output_field": "is_safe",
+  "llm_flagged_value": "false",
+
+  "eval_dataset": "PKU-Alignment/BeaverTails",
+  "eval_label_field": "response_label",
+  "eval_flagged_value": "false",
+
+  "output_file": "outputs/beaverTails.csv"
+}

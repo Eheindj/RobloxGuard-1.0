@@ -291,7 +291,6 @@ class SafetyEvaluator:
                     "prompt_label": prompt_label
                 }
                 eval_dataset.append(entry)
-
         elif eval_config["name"] == models.OPENAI_MOD:
             with open(eval_config["eval_dataset"], 'r') as f:
                 df = f.readlines()
@@ -311,7 +310,19 @@ class SafetyEvaluator:
                     "prompt_label": label
                 }
                 eval_dataset.append(entry)
-
+        elif eval_config["name"] == models.BEAVERTAILS:
+            df = datasets.load_dataset(eval_config["eval_dataset"], split='30k_test')
+    
+            eval_dataset = []
+            for data in df:
+                # Create the JSON structure
+                entry = {
+                    "prompt": data['prompt'],
+                    "response": data['response'],
+                    "response_label": str(data["is_safe"]).lower()
+                }
+                eval_dataset.append(entry)
+    
         return eval_dataset
 
     def evaluate_dataset(self, eval_config: Dict[str, Any]) -> None:
@@ -368,10 +379,12 @@ class SafetyEvaluator:
                 if self.has_labels:
                     # Determine ground truth and prediction
                     actual_unsafe = (
-                        str(eval_data.get(eval_label_field_key, "")).lower() == "unsafe"
+                        str(eval_data.get(eval_label_field_key, "")).lower() == 
+                        str(eval_config["eval_flagged_value"]).lower()
                     )
                     predicted_unsafe = (
-                        "unsafe" == llm_prediction.lower()
+                        str(eval_config["llm_flagged_value"]).lower() == 
+                        llm_prediction.lower()
                     )
                     
                     # Update metrics

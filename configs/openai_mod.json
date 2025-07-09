@@ -11,6 +11,7 @@
 
   "eval_dataset": "datasets/samples-1680.jsonl",
   "eval_label_field": "prompt_label",
+  "eval_flagged_value": "unsafe",
 
   "output_file": "outputs/openai_mod.csv"
 }
