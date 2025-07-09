@@ -18,6 +18,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM
 from peft import PeftModel
 import models
 import datasets
+import random
 
 
 class ModelEvaluator:
@@ -390,6 +391,61 @@ class SafetyEvaluator:
                     "label": str(data['label']).lower()
                 }
                 eval_dataset.append(entry)
+        elif eval_config["name"] == models.SAFERLHF:
+            dataset = datasets.load_dataset(eval_config["eval_dataset"], revision="v0")
+            test_dataset = dataset["test"]
+            all_data = []
+            ds = []
+
+            prompts = test_dataset["prompt"]
+            response_0 = test_dataset["response_0"]
+            response_1 = test_dataset["response_1"]
+            is_response_0_safe = test_dataset["is_response_0_safe"]
+            is_response_1_safe = test_dataset["is_response_1_safe"]
+
+            safe_responses, harmful_responses = [], []
+            for p, r0, r1, r0s, r1s in zip(prompts, response_0, response_1, is_response_0_safe, is_response_1_safe):
+                # pick only when r0s != r1s
+                if r0s == r1s:
+                    continue
+                if r0s:
+                    safe_responses.append({
+                        "prompt": p,
+                        "response": r0,
+                        "response_harmfulness": 0,
+                    })
+                else:
+                    harmful_responses.append({
+                        "prompt": p,
+                        "response": r0,
+                        "response_harmfulness": 1,
+                    })
+
+                if r1s:
+                    safe_responses.append({
+                        "prompt": p,
+                        "response": r1,
+                        "response_harmfulness": 0,
+                    })
+                else:
+                    harmful_responses.append({
+                        "prompt": p,
+                        "response": r1,
+                        "response_harmfulness": 1,
+                    })
+
+        # pick 1000 from each category
+        random.seed(42)
+        indices = random.sample(range(len(safe_responses)), 1000)
+        all_data = [safe_responses[i] for i in indices] + [harmful_responses[i] for i in indices]
+
+        for i, data in enumerate(all_data, start=0):
+            entry = {
+                "prompt": data['prompt'],
+                "response": data['response'],
+                "is_safe": "safe" if i < 1000 else "unsafe"
+            }
+            eval_dataset.append(entry)
     
         return eval_dataset
 
