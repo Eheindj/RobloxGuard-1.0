@@ -434,18 +434,18 @@ class SafetyEvaluator:
                         "response_harmfulness": 1,
                     })
 
-        # pick 1000 from each category
-        random.seed(42)
-        indices = random.sample(range(len(safe_responses)), 1000)
-        all_data = [safe_responses[i] for i in indices] + [harmful_responses[i] for i in indices]
+            # pick 1000 from each category
+            random.seed(42)
+            indices = random.sample(range(len(safe_responses)), 1000)
+            all_data = [safe_responses[i] for i in indices] + [harmful_responses[i] for i in indices]
 
-        for i, data in enumerate(all_data, start=0):
-            entry = {
-                "prompt": data['prompt'],
-                "response": data['response'],
-                "is_safe": "safe" if i < 1000 else "unsafe"
-            }
-            eval_dataset.append(entry)
+            for i, data in enumerate(all_data, start=0):
+                entry = {
+                    "prompt": data['prompt'],
+                    "response": data['response'],
+                    "is_safe": "safe" if i < 1000 else "unsafe"
+                }
+                eval_dataset.append(entry)
     
         return eval_dataset
 
