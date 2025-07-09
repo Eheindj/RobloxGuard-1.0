@@ -1,5 +1,5 @@
 {
-  "name": "xstest",
+  "name": "safeRLHF",
 
   "model_path": "Roblox/RoGuard",
   "base_model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
