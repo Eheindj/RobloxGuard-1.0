@@ -446,16 +446,26 @@ class SafetyEvaluator:
                         "response_harmfulness": 1,
                     })
 
-            # pick 1000 from each category
-            random.seed(42)
-            indices = random.sample(range(len(safe_responses)), 1000)
-            all_data = [safe_responses[i] for i in indices] + [harmful_responses[i] for i in indices]
+            all_data = safe_responses[i] + harmful_responses[i]
 
             for i, data in enumerate(all_data, start=0):
                 entry = {
                     "prompt": data['prompt'],
                     "response": data['response'],
-                    "is_safe": "safe" if i < 1000 else "unsafe"
+                    "is_safe": "unsafe" if data['response_harmfulness'] else "safe"
+                }
+                eval_dataset.append(entry)
+    
+            return eval_dataset
+
+        elif eval_config["name"] == models.SIMPLEST:
+            df = datasets.load_dataset(eval_config["eval_dataset"], split="test")
+    
+            eval_dataset = []
+            for data in df:
+                entry = {
+                    "prompt": data['prompt'],
+                    "violation": "true"
                 }
                 eval_dataset.append(entry)
     
@@ -505,6 +515,16 @@ class SafetyEvaluator:
                 # Format prompt and generate response
                 prompt = self.format_prompt(prompt_template, eval_data)
                 llm_output = self.model_evaluator.generate_text(prompt)
+
+                llm_prediction = self.extract_llm_output(
+                    llm_output, 
+                    eval_config['llm_output_field']
+                )
+                if not llm_prediction:
+                    llm_output = {eval_config["llm_output_field"]: llm_output}
+                    llm_output = json.dumps(llm_output)
+                    print("Converted to json.")
+
                 print("llm_output:", llm_output)
                 
                 # Extract prediction from LLM output
