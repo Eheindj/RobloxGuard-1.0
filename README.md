@@ -82,4 +82,4 @@ python inference.py --config configs/YOUR_LABELING_CONFIG.json
 | 🛡️ RoGuard                |   75.8  |  70.5 |  91.1 |   90.2 |   88.7 |     87.5 |      69.7 |   80.0 |   80.7 |
 
 
-You can download the model from HuggingFace under [![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-RoGuard)](https://huggingface.co/Roblox/RoGuard)
+You can download the model from [![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-RoGuard)](https://huggingface.co/Roblox/RoGuard)
