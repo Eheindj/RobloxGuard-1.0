@@ -353,6 +353,33 @@ class SafetyEvaluator:
                     "response_harm_label": str(data['response_harm_label']).lower()
                 }
                 eval_dataset.append(entry)
+        elif eval_config["name"] == models.HARMBENCH:
+            with open(eval_config["eval_dataset"], 'r') as f:
+                raw_data = json.load(f)
+            keys = list(raw_data.keys())
+
+            all_data = []
+            ds = []
+            def preprocess_data(x):
+                human_0 = x["human_0"]
+                human_1 = x["human_1"]
+                human_2 = x["human_2"]
+
+                harmfulness = 1 if sum([human_0, human_1, human_2]) > 1 else 0
+                is_adversarial = True if x["experiment"] != "default" else False
+                return {"prompt": x["test_case"], "response": x["generation"], "response_harmfulness": harmfulness,
+                        "prompt_type": "adversarial" if is_adversarial else "vanilla"}
+
+            for k in keys:
+                all_data.extend([preprocess_data(x) for x in raw_data[k]])
+
+            for data in all_data:
+                entry = {
+                    "prompt": data['prompt'],
+                    "response": data['response'],
+                    "violation": data["response_harmfulness"]
+                }
+                eval_dataset.append(entry)
     
         return eval_dataset
 
@@ -394,7 +421,6 @@ class SafetyEvaluator:
             
             for i, eval_data in enumerate(eval_dataset):
                 # Skip if eval_label_field is null (when specified)
-                print(eval_data)
                 if self.has_labels and eval_data.get(eval_label_field_key) in [None, "null"]:
                     continue
                 
