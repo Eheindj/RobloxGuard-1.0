@@ -11,7 +11,6 @@
 
   "eval_dataset": "nvidia/Aegis-AI-Content-Safety-Dataset-1.0",
   "eval_label_field": "prompt_label",
-  "eval_flagged_value": "unsafe",
 
   "output_file": "outputs/aegis.csv"
 }

@@ -260,6 +260,60 @@ class SafetyEvaluator:
         
         print(f"Summary metrics written to: {summary_file}")
 
+    def load_evaluation_dataset(self, eval_config: Dict[str, Any]) -> list:
+        """
+        Load and format evaluation dataset based on the configuration.
+
+        Args:
+            eval_config: Dictionary containing evaluation configuration including
+                        'name', 'eval_dataset' path, and other parameters
+
+        Returns:
+            List of dictionaries containing 'prompt' and 'prompt_label' fields
+        """
+        eval_dataset = []
+
+        if eval_config["name"] == models.AEGIS:
+            df = datasets.load_dataset(eval_config["eval_dataset"], split='test')
+            df = df.filter(lambda example: example['text_type'] == 'user_message')
+
+            # Create evaluation dataset in the specified format
+            for data in df:
+                # Calculate label based on safety annotations
+                if not data['labels_0'] == 'Safe' and not data['labels_1'] == 'Safe' and not data['labels_2'] == 'Safe':
+                    prompt_label = "unsafe"
+                else:
+                    prompt_label = "safe"
+
+                # Create the JSON structure
+                entry = {
+                    "prompt": data['text'],
+                    "prompt_label": prompt_label
+                }
+                eval_dataset.append(entry)
+
+        elif eval_config["name"] == models.OPENAI_MOD:
+            with open(eval_config["eval_dataset"], 'r') as f:
+                df = f.readlines()
+
+            for data in df:
+                data = json.loads(data)
+
+                label = "safe"
+                for value in data.values():
+                    if value == 1:
+                        label = "unsafe"
+                        break
+
+                # Create the JSON structure
+                entry = {
+                    "prompt": data['prompt'],
+                    "prompt_label": label
+                }
+                eval_dataset.append(entry)
+
+        return eval_dataset
+
     def evaluate_dataset(self, eval_config: Dict[str, Any]) -> None:
         """Evaluate a single dataset configuration."""
         print(f"Starting evaluation with config")
@@ -291,30 +345,7 @@ class SafetyEvaluator:
                 prompt_template = file.read().strip()
             
             # Load evaluation dataset
-            #with open(eval_config["eval_dataset"], "r", encoding="utf-8") as file:
-            #    eval_dataset = json.load(file)
-
-            if eval_config["name"] == models.AEGIS: 
-                df = datasets.load_dataset(eval_config["eval_dataset"], split='test')
-                df = df.filter(lambda example: example['text_type'] == 'user_message')
-
-                # Create evaluation dataset in the specified format
-                eval_dataset = []
-
-                for data in df:
-                    # Calculate label based on safety annotations
-                    if not data['labels_0'] == 'Safe' and not data['labels_1'] == 'Safe' and not data['labels_2'] == 'Safe':
-                        prompt_label = "unsafe"
-                    else:
-                        prompt_label = "safe"
-
-                    # Create the JSON structure
-                    entry = {
-                        "prompt": data['text'],
-                        "prompt_label": prompt_label
-                    }
-
-                    eval_dataset.append(entry)
+            eval_dataset = self.load_evaluation_dataset(eval_config)
 
             
             print(f"Loaded {len(eval_dataset)} evaluation examples")
@@ -337,12 +368,10 @@ class SafetyEvaluator:
                 if self.has_labels:
                     # Determine ground truth and prediction
                     actual_unsafe = (
-                        str(eval_data.get(eval_label_field_key, "")).lower() == 
-                        str(eval_config["eval_flagged_value"]).lower()
+                        str(eval_data.get(eval_label_field_key, "")).lower() == "unsafe"
                     )
                     predicted_unsafe = (
-                        str(eval_config["llm_flagged_value"]).lower() == 
-                        llm_prediction.lower()
+                        "unsafe" == llm_prediction.lower()
                     )
                     
                     # Update metrics
@@ -358,6 +387,7 @@ class SafetyEvaluator:
                         "correct": predicted_unsafe == actual_unsafe,
                         "current_metrics": self.metrics.get_metrics_dict()
                     }
+                    print("correct:", predicted_unsafe == actual_unsafe)
                 else:
                     # Prepare simplified result data when no labels
                     result_data = {
