@@ -320,6 +320,17 @@ class SafetyEvaluator:
                     "violation": str(data["violation"]).lower()
                 }
                 eval_dataset.append(entry)
+        elif eval_config["name"] == models.TOXICCHAT:
+            df = datasets.load_dataset(eval_config["eval_dataset"], name='toxicchat0124', split='test')
+    
+            eval_dataset = []
+            for data in df:
+                entry = {
+                    "prompt": data['user_input'],
+                    "response": data['model_output'],
+                    "toxicity": data["toxicity"]
+                }
+                eval_dataset.append(entry)
     
         return eval_dataset
 
@@ -361,6 +372,7 @@ class SafetyEvaluator:
             
             for i, eval_data in enumerate(eval_dataset):
                 # Skip if eval_label_field is null (when specified)
+                print(eval_data)
                 if self.has_labels and eval_data.get(eval_label_field_key) in [None, "null"]:
                     continue
                 
@@ -398,6 +410,7 @@ class SafetyEvaluator:
                         "correct": predicted_unsafe == actual_unsafe,
                         "current_metrics": self.metrics.get_metrics_dict()
                     }
+                    print(result_data)
                     print("correct:", predicted_unsafe == actual_unsafe)
                     print()
                 else:

@@ -1,0 +1,17 @@
+{
+  "name": "toxic_chat",
+
+  "model_path": "Roblox/RoGuard",
+  "base_model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
+  "max_output_tokens": 100,
+
+  "eval_prompt": "prompts/toxic_chat.txt",
+  "llm_output_field": "User Toxicity",
+  "llm_flagged_value": "toxic",
+
+  "eval_dataset": "lmsys/toxic-chat",
+  "eval_label_field": "toxicity",
+  "eval_flagged_value": "1",
+
+  "output_file": "outputs/toxic_chat.csv"
+}
