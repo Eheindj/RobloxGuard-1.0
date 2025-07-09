@@ -446,7 +446,7 @@ class SafetyEvaluator:
                         "response_harmfulness": 1,
                     })
 
-            all_data = safe_responses[i] + harmful_responses[i]
+            all_data = safe_responses + harmful_responses
 
             for i, data in enumerate(all_data, start=0):
                 entry = {
