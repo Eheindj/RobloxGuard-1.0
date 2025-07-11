@@ -10,7 +10,9 @@ pip install -r requirements.txt
 ```
 
 # ⚙️ Configuration
-Prepare a config file (JSON format) with the following keys:
+Multiple configuration files are already prepared and ready to use in the configs/ folder.
+
+To run an evaluation, each config file (in JSON format) should follow this structure:
 ```
 {
   "name": "roblox",                                             // Eval dataset name
