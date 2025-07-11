@@ -37,33 +37,41 @@ To evaluate model safety on a labeled dataset:
 python inference.py --config configs/roblox.json
 ```
 
-# 🏷️ Running Labeling-Only (No Ground Truth)
-You can run RoGuard on unlabeled data to generate model predictions only:
-```
-python inference.py --config configs/YOUR_LABELING_CONFIG.json
-```
 
 # 📄 Output Files
-- Evaluation Results (CSV): Includes prompt, response, prediction, and correctness (if labels are provided).
-- Summary Metrics (CSV): Available for evaluation runs only.
-  - Includes: Precision, Recall, F1 Score, False Positive Rate
-  - Confusion Matrix: TP / FP / TN / FN
+
+- **Evaluation Results** (`*.csv`):  
+  A row-wise log of each evaluation sample with:
+  - `input_prompt`: the original prompt  
+  - `input_response`: the model’s generated response  
+  - `actual_unsafe`: ground-truth label (if provided)  
+  - `predicted_unsafe`: model’s prediction  
+  - `correct`: whether the prediction matched the ground truth  
+
+- **Summary Metrics** (`*_summary.csv`):  
+  A single-file report for each evaluation run with:
+  - Count-based metrics:  
+    `Total Examples`, `True Positives`, `False Negatives`, `False Positives`, `True Negatives`  
+  - Performance metrics (as percentages):  
+    `Precision`, `Recall`, `F1 Score`, `False Positive Rate`
 
 
 # 📁 Directory Structure
 ```
 .
-├── configs/
-│   └── YOUR_EVAL_CONFIG.json
-├── datasets/
-│   └── YOUR_EVAL_DATASET.json
-├── prompts/
-│   └── YOUR_PROMPT.txt
-├── outputs/
-│   ├── YOUR_EVAL_OUTPUT.csv
-│   └── YOUR_EVAL_OUTPUT_summary.csv
-├── inference.py
-└── requirements.txt
+├── configs/                # Evaluation configs for different datasets
+│   ├── aegis.json
+│   ├── ...
+│   └── roblox.json
+├── prompts/                # Prompt files for inference or evaluation
+│   ├── aegis.json
+│   ├── ...
+│   └── roblox.txt
+├── outputs/                # Output CSVs for results and summaries
+│   ├── roblox.csv
+│   └── roblox_summary.csv
+├── inference.py            # Script for running inference/evaluation
+└── requirements.txt        # Python dependencies
 ```
 
 # 📊 Model Benchmark Results
