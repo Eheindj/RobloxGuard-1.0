@@ -655,6 +655,11 @@ def main():
         model_path=eval_config["model_path"]
     )
     
+    # Create a directory
+    output_dir = os.path.dirname(output_file)
+    if output_dir:
+        os.makedirs(output_dir, exist_ok=True)
+
     # Run evaluation
     safety_evaluator = SafetyEvaluator(model_evaluator, output_file)
     safety_evaluator.evaluate_dataset(eval_config)
