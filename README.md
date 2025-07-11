@@ -9,6 +9,12 @@ source venv_roguard/bin/activate
 pip install -r requirements.txt
 ```
 
+# 🚀 Quick Evaluation
+Run safety evaluations:
+```
+python inference.py --config configs/roblox.json
+```
+
 # ⚙️ Configuration
 Multiple configuration files are already prepared and ready to use in the `configs/` folder.
 
@@ -33,11 +39,15 @@ To run an evaluation, each config file (in JSON format) should follow this struc
 }
 ```
 
-# 🚀 Running Evaluation
-To evaluate model safety on a labeled dataset:
-```
-python inference.py --config configs/roblox.json
-```
+# 🎯 Roblox Community Standard
+
+| **Category**       | **Subcategories**                                                                                   |
+|--------------------|---------------------------------------------------------------------------------------------------|
+| **Safety**         | - Child Exploitation<br>- Terrorism and Violent Extremism<br>- Threats, Bullying, and Harassment<br>- Suicide, Self Injury, and Harmful Behavior<br>- Discrimination, Slurs, and Hate Speech<br>- Harmful Off-Platform Speech or Behavior |
+| **Civility**       | - Real-World Sensitive Events<br>- Violent Content and Gore<br>- Romantic and Sexual Content<br>- Illegal and Regulated Goods and Activities<br>- Profanity<br>- Political Figures and Entities<br>- Religious Content<br>- Expanded Policies for Suitability |
+| **Integrity**      | - Cheating and Scams<br>- Spam<br>- Intellectual Property Violations<br>- Independent Advertisement Publishing<br>- Prohibited Advertising Practices and Content |
+| **Roblox Economy** | - Promotional Offers<br>- Soliciting Donations: Tipping<br>- Paid Random Items                          |
+| **Security**       | - Sharing Personal Information<br>- Directing Users Off-Platform<br>- Misusing Roblox Systems: Jailbreaking |
 
 
 # 📄 Output Files
