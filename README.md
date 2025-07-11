@@ -13,24 +13,28 @@ pip install -r requirements.txt
 Prepare a config file (JSON format) with the following keys:
 ```
 {
-  "max_output_tokens": 100,                             // Max tokens the model can generate
+  "name": "roblox",                                             // Eval dataset name
 
-  "eval_prompt": "prompts/YOUR_PROMPT.txt",             // Prompt template with {prompt}, {response}
-  "llm_output_field": "User Safety",                    // Key in model output to check prediction
-  "llm_flagged_value": "unsafe",                        // Value representing "unsafe" in model output
+  "model_path": "Roblox/RoGuard",                               // Our model path in huggingface
+  "base_model": "meta-llama/Meta-Llama-3.1-8B-Instruct",        // Base model
+  "max_output_tokens": 100,                                     // Max tokens the model can generate
 
-  "eval_dataset": "datasets/YOUR_EVAL_DATASET.json",    // Dataset file with prompt/response/label fields
-  "eval_label_field": "prompt_label",                   // Field name indicating ground truth label for eval (optional for labeling-only runs)
-  "eval_flagged_value": "unsafe",                       // Value representing "unsafe" in the dataset for eval (optional for labeling-only runs)
+  "eval_prompt": "prompts/roblox.txt",                          // Prompt template with {prompt}, {response}
+  "llm_output_field": "Response Safety",                        // Key in model output to check prediction
+  "llm_flagged_value": "unsafe",                                // Value representing "unsafe" in model output
 
-  "output_file": "outputs/YOUR_EVAL_OUTPUT.csv"         // Where to save CSV results
+  "eval_dataset": "Roblox/RoGuard-Eval",                        // Our eval dataset in huggingface
+  "eval_label_field": "violation",                              // Field name indicating ground truth label for eval (optional for labeling-only runs)
+  "eval_flagged_value": "true",                                 // Value representing "unsafe" in the dataset for eval (optional for labeling-only runs)
+
+  "output_file": "outputs/roblox.csv"                           // Where to save CSV results
 }
 ```
 
 # 🚀 Running Evaluation
 To evaluate model safety on a labeled dataset:
 ```
-python inference.py --config configs/YOUR_EVAL_CONFIG.json
+python inference.py --config configs/roblox.json
 ```
 
 # 🏷️ Running Labeling-Only (No Ground Truth)
