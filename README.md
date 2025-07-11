@@ -53,7 +53,6 @@ To run an evaluation, each config file (in JSON format) should follow this struc
 # 📄 Output Files
 
 - **Evaluation Results** (`*.csv`):  
-  A row-wise log of each evaluation sample with:
   - `input_prompt`: the original prompt  
   - `input_response`: the model’s generated response  
   - `actual_unsafe`: ground-truth label (if provided)  
@@ -61,7 +60,6 @@ To run an evaluation, each config file (in JSON format) should follow this struc
   - `correct`: whether the prediction matched the ground truth  
 
 - **Summary Metrics** (`*_summary.csv`):  
-  A single-file report for each evaluation run with:
   - Count-based metrics:  
     `Total Examples`, `True Positives`, `False Negatives`, `False Positives`, `True Negatives`  
   - Performance metrics (as percentages):  
