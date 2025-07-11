@@ -10,7 +10,7 @@ pip install -r requirements.txt
 ```
 
 # ⚙️ Configuration
-Multiple configuration files are already prepared and ready to use in the configs/ folder.
+Multiple configuration files are already prepared and ready to use in the `configs/` folder.
 
 To run an evaluation, each config file (in JSON format) should follow this structure:
 ```
