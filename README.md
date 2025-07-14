@@ -39,16 +39,6 @@ To run an evaluation, each config file (in JSON format) should follow this struc
 }
 ```
 
-# 🎯 Roblox Community Standard
-
-| **Category**       | **Subcategories**                                                                                   |
-|--------------------|---------------------------------------------------------------------------------------------------|
-| **Safety**         | - Child Exploitation<br>- Terrorism and Violent Extremism<br>- Threats, Bullying, and Harassment<br>- Suicide, Self Injury, and Harmful Behavior<br>- Discrimination, Slurs, and Hate Speech<br>- Harmful Off-Platform Speech or Behavior |
-| **Civility**       | - Real-World Sensitive Events<br>- Violent Content and Gore<br>- Romantic and Sexual Content<br>- Illegal and Regulated Goods and Activities<br>- Profanity<br>- Political Figures and Entities<br>- Religious Content<br>- Expanded Policies for Suitability |
-| **Integrity**      | - Cheating and Scams<br>- Spam<br>- Intellectual Property Violations<br>- Independent Advertisement Publishing<br>- Prohibited Advertising Practices and Content |
-| **Roblox Economy** | - Promotional Offers<br>- Soliciting Donations: Tipping<br>- Paid Random Items                          |
-| **Security**       | - Sharing Personal Information<br>- Directing Users Off-Platform<br>- Misusing Roblox Systems: Jailbreaking |
-
 
 # 📄 Output Files
 
