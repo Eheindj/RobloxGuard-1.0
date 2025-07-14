@@ -1,4 +1,15 @@
-# 🛡️ RoGuard: Advancing Safety for LLMs with Robust Guardrails
+# RoGuard
+
+<div align="center" style="line-height: 1;">
+  <a href="https://huggingface.co/Roblox/RoGuard" target="_blank"><img alt="Hugging Face" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-RoGuard-ffc107?color=ffc107&logoColor=white"/></a>
+  <a href="https://github.com/Roblox/RoGuard//blob/main/LICENSE"><img alt="License" src="https://img.shields.io/badge/License-Roblox?&color=f5de53"/></a>
+</div>
+
+<p align="center">
+<b>📰&nbsp;&nbsp;<a href="https://devforum.roblox.com/t/beta-introducing-text-generation-api/3556520">Tech Blog</a></b> &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; <b>📄&nbsp;&nbsp;Paper Link (coming soon)</b>
+</p>
+
+# 🛡️ Advancing Safety for LLMs with Robust Guardrails
 RoGuard is a lightweight, modular evaluation framework for assessing the safety of fine-tuned language models. It provides structured evaluation using configurable prompts, labeled datasets, and outputs comprehensive metrics.
 
 # 📦 Installation
