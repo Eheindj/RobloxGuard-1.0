@@ -14,7 +14,7 @@
 RoGuard, a SOTA instruction fine-tuned LLM, is designed to help safeguard our Text Generation API. It performs safety classification at both the prompt and response levels, deciding whether or not each input or output violates our policies. This dual-level assessment is essential for moderating both user queries and the model’s own generated outputs. At the heart of our system is an LLM that’s been fine-tuned from the Llama-3.1-8B-Instruct model. We trained this LLM with a particular focus on high-quality instruction tuning to optimize for safety judgment performance.  
 
 
-# 📦 Installation
+## 📦 Installation
 Install the required dependencies:
 ```
 python -m venv venv_roguard
@@ -22,13 +22,13 @@ source venv_roguard/bin/activate
 pip install -r requirements.txt
 ```
 
-# 🚀 Evaluation
+## 🚀 Evaluation
 Run safety evaluations:
 ```
 python inference.py --config configs/roblox.json
 ```
 
-# ⚙️ Configuration
+## ⚙️ Configuration
 Multiple configuration files are already prepared and ready to use in the `configs/` folder.
 
 To run an evaluation, each config file (in JSON format) should follow this structure:
@@ -53,7 +53,7 @@ To run an evaluation, each config file (in JSON format) should follow this struc
 ```
 
 
-# 📄 Output Files
+## 📄 Output Files
 
 - **Evaluation Results** (`*.csv`):  
   - `input_prompt`: the original prompt  
@@ -69,7 +69,7 @@ To run an evaluation, each config file (in JSON format) should follow this struc
     `Precision`, `Recall`, `F1 Score`, `False Positive Rate`
 
 
-# 📁 Directory Structure
+## 📁 Directory Structure
 ```
 .
 ├── configs/                # Evaluation configs for different datasets
@@ -87,7 +87,7 @@ To run an evaluation, each config file (in JSON format) should follow this struc
 └── requirements.txt        # Python dependencies
 ```
 
-# 📊 Model Benchmark Results
+## 📊 Model Benchmark Results
 
 - **Prompt Metrics**: These evaluate how well the model classifies or responds to potentially harmful **user inputs**
 - **Response Metrics**: These measure how well the model handles or generates **responses**, ensuring its outputs are safe and aligned.
