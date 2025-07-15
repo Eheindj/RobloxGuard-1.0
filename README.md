@@ -102,7 +102,4 @@ To run an evaluation, each config file (in JSON format) should follow this struc
 | GPT-4o                    |   68.1  |  70.4 |  83.2 |   90.2 |   87.9 |     83.8 |      67.9 |   73.1 |   83.5 |
 | BingoGuard-phi3-3B        |   72.5  |  72.8 |  90.0 |   90.8 |   88.9 |     86.2 |      69.9 |   79.7 |   85.1 |
 | BingoGuard-llama3.1-8B    |   75.7  |  77.9 |  90.4 |   94.9 |   88.9 |     86.4 |      68.7 |   80.1 |   86.4 |
-| 🛡️ RoGuard                |   75.8  |  70.5 |  91.1 |   90.2 |   88.7 |     87.5 |      69.7 |   80.0 |   80.7 |
-
-
-You can download the model from [![Hugging Face](https://img.shields.io/badge/🤗%20Hugging%20Face-RoGuard)](https://huggingface.co/Roblox/RoGuard)
+| RoGuard                   |   75.8  |  70.5 |  91.1 |   90.2 |   88.7 |     87.5 |      69.7 |   80.0 |   80.7 |
