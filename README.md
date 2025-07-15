@@ -92,16 +92,4 @@ To run an evaluation, each config file (in JSON format) should follow this struc
 - **Prompt Metrics**: These evaluate how well the model classifies or responds to potentially harmful **user inputs**
 - **Response Metrics**: These measure how well the model handles or generates **responses**, ensuring its outputs are safe and aligned.
 
-
-| Model / Metric            | Prompt  |       |       |        |        | Response |           |        |        |
-|---------------------------|--------:|------:|------:|-------:|-------:|---------:|----------:|-------:|-------:|
-|                           | ToxicC. | OAI   | Aegis | XSTest | WildP. | BeaverT. | SaferRLHF | WildR. | HarmB. |
-| LlamaGuard2-8B            |   42.7  |  77.6 |  73.8 |   88.6 |   70.9 |     71.8 |      51.6 |   65.2 |   78.5 |
-| LlamaGuard3-8B            |   50.9  |  79.4 |  74.8 |   88.3 |   70.1 |     69.7 |      53.7 |   70.2 |   84.9 |
-| MD-Judge-7B               |     -   |    -  |    -  |     -  |     -  |     86.7 |      64.8 |   76.8 |   81.2 |
-| WildGuard-7B              |   70.8  |  72.1 |  89.4 |   94.4 |   88.9 |     84.4 |      64.2 |   75.4 |   86.2 |
-| ShieldGemma-7B            |   70.2  |  82.1 |  88.7 |   92.5 |   88.1 |     84.8 |      66.6 |   77.8 |   84.8 |
-| GPT-4o                    |   68.1  |  70.4 |  83.2 |   90.2 |   87.9 |     83.8 |      67.9 |   73.1 |   83.5 |
-| BingoGuard-phi3-3B        |   72.5  |  72.8 |  90.0 |   90.8 |   88.9 |     86.2 |      69.9 |   79.7 |   85.1 |
-| BingoGuard-llama3.1-8B    |   75.7  |  77.9 |  90.4 |   94.9 |   88.9 |     86.4 |      68.7 |   80.1 |   86.4 |
-| RoGuard                   |   75.8  |  70.5 |  91.1 |   90.2 |   88.7 |     87.5 |      69.7 |   80.0 |   80.7 |
+<img width="1920" height="1338" alt="Metric" src="https://github.com/user-attachments/assets/847e3522-d579-4a1b-8a93-9c176470b1a4" />
