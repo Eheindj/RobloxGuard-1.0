@@ -25,7 +25,7 @@ pip install -r requirements.txt
 ## 🧠 Inference
 Run safety evaluations:
 ```
-python inference.py --config configs/roblox.json
+python inference.py --config configs/RoGuard.json
 ```
 
 ## ⚙️ Configuration
