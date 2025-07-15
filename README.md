@@ -1,7 +1,8 @@
- # RoGuard: Advancing Safety for LLMs with Robust Guardrails
+# RoGuard: Advancing Safety for LLMs with Robust Guardrails
 
 <div align="center" style="line-height: 1;">
   <a href="https://huggingface.co/Roblox/RoGuard" target="_blank"><img alt="Hugging Face" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-RoGuard-ffc107?color=ffc107&logoColor=white"/></a>
+  <a href="https://huggingface.co/datasets/Roblox/RoGuard-Eval" target="_blank"><img alt="Hugging Face" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-RoGuard-Eval-ffc107?color=1783ff&logoColor=white"/></a>
   <a href="https://github.com/Roblox/RoGuard/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/badge/License-Roblox?&color=f5de53"/></a>
 </div>
 
@@ -32,13 +33,13 @@ Multiple configuration files are already prepared and ready to use in the `confi
 To run an evaluation, each config file (in JSON format) should follow this structure:
 ```
 {
-  "name": "roblox",                                             // Eval dataset name
+  "name": "RoGuard",                                            // Eval dataset name
 
   "model_path": "Roblox/RoGuard",                               // Our model path in huggingface
   "base_model": "meta-llama/Meta-Llama-3.1-8B-Instruct",        // Base model
   "max_output_tokens": 100,                                     // Max tokens the model can generate
 
-  "eval_prompt": "prompts/roblox.txt",                          // Prompt template with {prompt}, {response}
+  "eval_prompt": "prompts/RoGuard.txt",                         // Prompt template with {prompt}, {response}
   "llm_output_field": "Response Safety",                        // Key in model output to check prediction
   "llm_flagged_value": "unsafe",                                // Value representing "unsafe" in model output
 
@@ -46,7 +47,7 @@ To run an evaluation, each config file (in JSON format) should follow this struc
   "eval_label_field": "violation",                              // Field name indicating ground truth label for eval (optional for labeling-only runs)
   "eval_flagged_value": "true",                                 // Value representing "unsafe" in the dataset for eval (optional for labeling-only runs)
 
-  "output_file": "outputs/roblox.csv"                           // Where to save CSV results
+  "output_file": "outputs/RoGuard.csv"                          // Where to save CSV results
 }
 ```
 
@@ -73,14 +74,14 @@ To run an evaluation, each config file (in JSON format) should follow this struc
 ├── configs/                # Evaluation configs for different datasets
 │   ├── aegis.json
 │   ├── ...
-│   └── roblox.json
+│   └── RoGuard.json
 ├── prompts/                # Prompt files for inference or evaluation
 │   ├── aegis.json
 │   ├── ...
-│   └── roblox.txt
+│   └── RoGuard.txt
 ├── outputs/                # Output CSVs for results and summaries
-│   ├── roblox.csv
-│   └── roblox_summary.csv
+│   ├── RoGuard.csv
+│   └── RoGuard_summary.csv
 ├── inference.py            # Script for running inference/evaluation
 └── requirements.txt        # Python dependencies
 ```

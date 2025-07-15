@@ -322,9 +322,9 @@ class SafetyEvaluator:
                     "is_safe": str(data["is_safe"]).lower()
                 }
                 eval_dataset.append(entry)
-        elif eval_config["name"] == models.ROBLOX:
+        elif eval_config["name"] == models.ROGUARD:
             df = datasets.load_dataset(eval_config["eval_dataset"], split='test')
-    
+
             eval_dataset = []
             for data in df:
                 entry = {
