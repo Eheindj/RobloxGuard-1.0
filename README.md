@@ -20,7 +20,7 @@ source venv_roguard/bin/activate
 pip install -r requirements.txt
 ```
 
-# 🚀 Quick Evaluation
+# 🚀 Evaluation
 Run safety evaluations:
 ```
 python inference.py --config configs/roblox.json
