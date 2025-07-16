@@ -96,4 +96,5 @@ To run an evaluation, each config file (in JSON format) should follow this struc
 - **Prompt Metrics**: These evaluate how well the model classifies or responds to potentially harmful **user inputs**
 - **Response Metrics**: These measure how well the model handles or generates **responses**, ensuring its outputs are safe and aligned.
 
-<img width="1920" height="1338" alt="Metric" src="https://github.com/user-attachments/assets/847e3522-d579-4a1b-8a93-9c176470b1a4" />
+![Newsroom_RoGuard_2507_Hero_Final_Background](https://github.com/user-attachments/assets/cedff355-2322-4e68-a0f1-d9e946f2d29b)
+
