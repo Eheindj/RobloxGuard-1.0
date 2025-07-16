@@ -3,15 +3,17 @@
 
 <div align="center" style="line-height: 1;">
   <a href="https://huggingface.co/Roblox/RoGuard" target="_blank"><img alt="Hugging Face" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-RoGuard-ffc107?color=ffc107&logoColor=white"/></a>
-  <a href="https://huggingface.co/datasets/Roblox/RoGuard-Eval" target="_blank"><img alt="Hugging Face" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-RoGuardEval-ffc107?color=1783ff&logoColor=white"/></a>
-  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Data%20License-CC_BY_NC_SA_4.0-blue" alt="Data License"></a>
   <a href="https://github.com/Roblox/RoGuard/blob/main/LICENSE"><img src="https://img.shields.io/badge/Code%20License-RAIL_MS-green" alt="Code License"></a>
 </div>
+<div align="center" style="line-height: 1;">
+  <a href="https://huggingface.co/datasets/Roblox/RoGuard-Eval" target="_blank"><img alt="Hugging Face" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-RoGuardEval-ffc107?color=1783ff&logoColor=white"/></a>
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Data%20License-CC_BY_NC_SA_4.0-blue" alt="Data License"></a>
+</div>
 
-<p align="center">
+<div align="center" style="line-height: 1;">
 <a href="https://devforum.roblox.com/t/beta-introducing-text-generation-api/3556520" target="_blank"><img src=https://img.shields.io/badge/Roblox-Blog-000000.svg?logo=Roblox height=22px></a>
 <img src="https://img.shields.io/badge/ArXiv-Report-b5212f.svg?logo=arxiv" height="22px"><sub>(coming soon)</sub>
-</p>
+</div>
 
 RoGuard, a SOTA instruction fine-tuned LLM, is designed to help safeguard our Text Generation API. It performs safety classification at both the prompt and response levels, deciding whether or not each input or output violates our policies. This dual-level assessment is essential for moderating both user queries and the model’s own generated outputs. At the heart of our system is an LLM that’s been fine-tuned from the Llama-3.1-8B-Instruct model. We trained this LLM with a particular focus on high-quality instruction tuning to optimize for safety judgment performance.  
 
