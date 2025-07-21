@@ -12,7 +12,7 @@
 
 <div align="center" style="line-height: 1;">
 <a href="https://devforum.roblox.com/t/beta-introducing-text-generation-api/3556520" target="_blank"><img src=https://img.shields.io/badge/Roblox-Blog-000000.svg?logo=Roblox height=22px></a>
-<img src="https://img.shields.io/badge/ArXiv-Report-b5212f.svg?logo=arxiv" height="22px"><sub>(coming soon)</sub>
+<img src="https://img.shields.io/badge/ArXiv-Report (coming soon)-b5212f.svg?logo=arxiv" height="22px"><sub></sub>
 </div>
 <br />
 
