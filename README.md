@@ -1,4 +1,4 @@
-# RoGuard: Advancing Safety for LLMs with Robust Guardrails
+# RoGuard 1.0: Advancing Safety for LLMs with Robust Guardrails
 
 
 <div align="center" style="line-height: 1;">
