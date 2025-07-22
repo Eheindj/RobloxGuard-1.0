@@ -20,7 +20,7 @@ RoGuard 1.0, a SOTA instruction fine-tuned LLM, is designed to help safeguard ou
 
 
 ## 📦 Installation
-Install the required dependencies:
+To set up the environment, install all required dependencies by running the following commands from the root of the repository:
 ```
 python -m venv venv_roguard
 source venv_roguard/bin/activate 
@@ -28,7 +28,7 @@ pip install -r requirements.txt
 ```
 
 ## 🧠 Inference
-Run safety evaluations:
+To perform the evaluation on a specific evaluation set, run the following command from the root of the repository using the appropriate dataset configuration file:
 ```
 python inference.py --config configs/RoGuard.json
 ```
