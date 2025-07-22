@@ -94,6 +94,7 @@ To run an evaluation, each config file (in JSON format) should follow this struc
 
 ## 📊 Model Benchmark Results
 
+We benchmark our models on a comprehensive set of open-source datasets for both prompt and response, as well as on RoGuard-Eval. This allows us to evaluate our model on both in-domain and out-of-domain datasets. We report our results in terms of F-1 score for binary violating/non-violating classification. In the table below, we compare our performance with that of several well-known models. The RoGuard 1.0 outperforms other models while generalizing on out-of-domain datasets.
 - **Prompt Metrics**: These evaluate how well the model classifies or responds to potentially harmful **user inputs**
 - **Response Metrics**: These measure how well the model handles or generates **responses**, ensuring its outputs are safe and aligned.
 
