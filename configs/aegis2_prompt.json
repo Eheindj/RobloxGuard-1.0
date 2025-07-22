@@ -1,7 +1,7 @@
 {
   "name": "aegis2",
 
-  "model_path": "Roblox/RoGuard1.0",
+  "model_path": "Roblox/RoGuard-1.0",
   "base_model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
   "max_output_tokens": 100,
 
