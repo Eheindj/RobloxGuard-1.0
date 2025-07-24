@@ -2,7 +2,7 @@
 
 
 <div align="center" style="line-height: 1;">
-  <a href="https://huggingface.co/Roblox/Llama-3.1-8B-Insturct-RoGuard-1.0" target="_blank"><img alt="Hugging Face" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-RoGuard 1.0-ffc107?color=ffc107&logoColor=white"/></a>
+  <a href="https://huggingface.co/Roblox/Llama-3.1-8B-Instruct-RoGuard-1.0" target="_blank"><img alt="Hugging Face" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-RoGuard 1.0-ffc107?color=ffc107&logoColor=white"/></a>
   <a href="https://github.com/Roblox/RoGuard/blob/main/LICENSE"><img src="https://img.shields.io/badge/Model%20License-RAIL_MS-green" alt="Model License"></a>
 </div>
 <div align="center" style="line-height: 1;">
