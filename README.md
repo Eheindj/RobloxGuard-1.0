@@ -41,7 +41,7 @@ To run an evaluation, each config file (in JSON format) should follow this struc
 {
   "name": "RoGuard",                                            // Eval dataset name
 
-  "model_path": "Roblox/RoGuard-1.0",                           // Our model path in huggingface
+  "model_path": "Roblox/Llama-3.1-8B-Instruct-RoGuard-1.0",                           // Our model path in huggingface
   "base_model": "meta-llama/Meta-Llama-3.1-8B-Instruct",        // Base model
   "max_output_tokens": 100,                                     // Max tokens the model can generate
 
