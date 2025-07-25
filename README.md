@@ -28,7 +28,10 @@ pip install -r requirements.txt
 ```
 
 ## 🧠 Inference
-To perform the evaluation on a specific evaluation set, run the following command from the root of the repository using the appropriate dataset configuration file:
+
+RoGuard 1.0 is a taxonomy-adaptive model, meaning it can generalize to any given taxonomy. For evaluation and benchmarking, we provide dataset-specific prompts in the prompt directory that reflect the taxonomy of each dataset. Users can also use their own datasets and corresponding taxonomies with RoGuard.
+
+To evaluate RoGuard on a specific evaluation set, run the following command from the root of the repository, using the appropriate dataset configuration file:
 ```
 python inference.py --config configs/RoGuard.json
 ```
