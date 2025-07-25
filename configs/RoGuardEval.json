@@ -1,11 +1,11 @@
 {
-  "name": "RoGuard",
+  "name": "RoGuardEval",
 
   "model_path": "Roblox/Llama-3.1-8B-Instruct-RoGuard-1.0",
   "base_model": "meta-llama/Meta-Llama-3.1-8B-Instruct",
   "max_output_tokens": 100,
 
-  "eval_prompt": "prompts/RoGuard.txt",
+  "eval_prompt": "prompts/RoGuardEval.txt",
   "llm_output_field": "Response Safety",
   "llm_flagged_value": "unsafe",
 
@@ -13,5 +13,5 @@
   "eval_label_field": "violation",
   "eval_flagged_value": "true",
 
-  "output_file": "outputs/RoGuard.csv"
+  "output_file": "outputs/RoGuardEval.csv"
 }

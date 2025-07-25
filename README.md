@@ -33,7 +33,7 @@ RoGuard 1.0 is a taxonomy-adaptive model, meaning it can generalize to any given
 
 To evaluate RoGuard on a specific evaluation set, run the following command from the root of the repository, using the appropriate dataset configuration file:
 ```
-python inference.py --config configs/RoGuard.json
+python inference.py --config configs/RoGuardEval.json
 ```
 
 ## ⚙️ Configuration
@@ -42,13 +42,13 @@ Multiple configuration files are already prepared and ready to use in the `confi
 To run an evaluation, each config file (in JSON format) should follow this structure:
 ```
 {
-  "name": "RoGuard",                                            // Eval name
+  "name": "RoGuardEval",                                        // Eval name
 
   "model_path": "Roblox/Llama-3.1-8B-Instruct-RoGuard-1.0",     // Our model path in huggingface
   "base_model": "meta-llama/Meta-Llama-3.1-8B-Instruct",        // Base model used for fine-tuning
   "max_output_tokens": 100,                                     // Max tokens the model can generate
 
-  "eval_prompt": "prompts/RoGuard.txt",                         // Prompt template file, with placeholders for {prompt} and {response}
+  "eval_prompt": "prompts/RoGuardEval.txt",                     // Prompt template file, with placeholders for {prompt} and {response}
   "llm_output_field": "Response Safety",                        // Field in model output to evaluate for safety
   "llm_flagged_value": "unsafe",                                // Value indicating an unsafe response from the model
 
@@ -56,7 +56,7 @@ To run an evaluation, each config file (in JSON format) should follow this struc
   "eval_label_field": "violation",                              // Field in the dataset that holds the ground truth label
   "eval_flagged_value": "true",                                 // Label value that indicates a violation (unsafe content)
 
-  "output_file": "outputs/RoGuard.csv"                          // Path to save the evaluation results as a CSV file
+  "output_file": "outputs/RoGuardEval.csv"                      // Path to save the evaluation results as a CSV file
 }
 ```
 
@@ -83,14 +83,14 @@ To run an evaluation, each config file (in JSON format) should follow this struc
 ├── configs/                # Evaluation configs for different datasets
 │   ├── aegis.json
 │   ├── ...
-│   └── RoGuard.json
+│   └── RoGuardEval.json
 ├── prompts/                # Prompt files for inference or evaluation
 │   ├── aegis.json
 │   ├── ...
-│   └── RoGuard.txt
+│   └── RoGuardEval.txt
 ├── outputs/                # Output CSVs for results and summaries
-│   ├── RoGuard.csv
-│   └── RoGuard_summary.csv
+│   ├── RoGuardEval.csv
+│   └── RoGuardEval_summary.csv
 ├── inference.py            # Script for running inference/evaluation
 └── requirements.txt        # Python dependencies
 ```
