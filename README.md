@@ -39,21 +39,21 @@ Multiple configuration files are already prepared and ready to use in the `confi
 To run an evaluation, each config file (in JSON format) should follow this structure:
 ```
 {
-  "name": "RoGuard",                                            // Eval dataset name
+  "name": "RoGuard",                                            // Eval name
 
-  "model_path": "Roblox/Llama-3.1-8B-Instruct-RoGuard-1.0",                           // Our model path in huggingface
-  "base_model": "meta-llama/Meta-Llama-3.1-8B-Instruct",        // Base model
+  "model_path": "Roblox/Llama-3.1-8B-Instruct-RoGuard-1.0",     // Our model path in huggingface
+  "base_model": "meta-llama/Meta-Llama-3.1-8B-Instruct",        // Base model used for fine-tuning
   "max_output_tokens": 100,                                     // Max tokens the model can generate
 
-  "eval_prompt": "prompts/RoGuard.txt",                         // Prompt template with {prompt}, {response}
-  "llm_output_field": "Response Safety",                        // Key in model output to check prediction
-  "llm_flagged_value": "unsafe",                                // Value representing "unsafe" in model output
+  "eval_prompt": "prompts/RoGuard.txt",                         // Prompt template file, with placeholders for {prompt} and {response}
+  "llm_output_field": "Response Safety",                        // Field in model output to evaluate for safety
+  "llm_flagged_value": "unsafe",                                // Value indicating an unsafe response from the model
 
-  "eval_dataset": "Roblox/RoGuard-Eval",                        // Our eval dataset in huggingface
-  "eval_label_field": "violation",                              // Field name indicating ground truth label for eval (optional for labeling-only runs)
-  "eval_flagged_value": "true",                                 // Value representing "unsafe" in the dataset for eval (optional for labeling-only runs)
+  "eval_dataset": "Roblox/RoGuard-Eval",                        // Evaluation dataset on Hugging Face
+  "eval_label_field": "violation",                              // Field in the dataset that holds the ground truth label
+  "eval_flagged_value": "true",                                 // Label value that indicates a violation (unsafe content)
 
-  "output_file": "outputs/RoGuard.csv"                          // Where to save CSV results
+  "output_file": "outputs/RoGuard.csv"                          // Path to save the evaluation results as a CSV file
 }
 ```
 
