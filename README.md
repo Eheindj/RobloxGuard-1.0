@@ -105,3 +105,17 @@ We benchmark RoGuard 1.0 model on a comprehensive set of open-source datasets fo
 
 ![Newsroom_RoGuard_2507_Hero_Final_Background](https://github.com/user-attachments/assets/cedff355-2322-4e68-a0f1-d9e946f2d29b)
 
+
+## 📚 Citation
+
+If you are using RoGuard 1.0, please cite it as:
+
+```bibtex
+@online{roblox2025roguard,
+  author       = {Mahesh Nandwana and Adam McFarlin and Nishchaie Khanna},
+  title        = {State‑of‑the‑Art LLM Helps Safeguard Unlimited Text Generation on Roblox: RoGuard 1.0 — Advancing Safety With Robust Guardrails},
+  year         = {2025},
+  month        = {Jul 22},
+  howpublished = {\url{https://corp.roblox.com/newsroom/2025/07/roguard-advancing-safety-for-llms-with-robust-guardrails}},
+}
+
