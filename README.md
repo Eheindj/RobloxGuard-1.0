@@ -16,7 +16,9 @@
 </div>
 <br />
 
-RoGuard 1.0, a SOTA instruction fine-tuned LLM, is designed to help safeguard our Text Generation API. It performs safety classification at both the prompt and response levels, deciding whether or not each input or output violates our policies. This dual-level assessment is essential for moderating both user queries and the model’s own generated outputs. At the heart of our system is an LLM that’s been fine-tuned from the Llama-3.1-8B-Instruct model. We trained this LLM with a particular focus on high-quality instruction tuning to optimize for safety judgment performance.  
+RoGuard 1.0, a SOTA instruction fine-tuned LLM, is designed to help safeguard our Text Generation API. It performs safety classification at both the prompt and response levels, deciding whether or not each input or output violates our policies. This dual-level assessment is essential for moderating both user queries and the model’s own generated outputs. At the heart of our system is an LLM that’s been fine-tuned from the Llama-3.1-8B-Instruct model. We trained this LLM with a particular focus on high-quality instruction tuning to optimize for safety judgment performance. 
+
+Llama 3.1 is licensed under the Llama 3.1 Community License, Copyright © Meta Platforms, Inc. All Rights Reserved.
 
 
 ## 📦 Installation
