@@ -1,4 +1,4 @@
-# RoGuard 1.0: Advancing Safety for LLMs with Robust Guardrails
+# Roblox Guard 1.0: Advancing Safety for LLMs with Robust Guardrails
 
 
 <div align="center" style="line-height: 1;">
@@ -16,7 +16,7 @@
 </div>
 <br />
 
-RoGuard 1.0, a SOTA instruction fine-tuned LLM, is designed to help safeguard our Text Generation API. It performs safety classification at both the prompt and response levels, deciding whether or not each input or output violates our policies. This dual-level assessment is essential for moderating both user queries and the model’s own generated outputs. At the heart of our system is an LLM that’s been fine-tuned from the Llama-3.1-8B-Instruct model. We trained this LLM with a particular focus on high-quality instruction tuning to optimize for safety judgment performance. 
+Roblox Guard 1.0, a SOTA instruction fine-tuned LLM, is designed to help safeguard our Text Generation API. It performs safety classification at both the prompt and response levels, deciding whether or not each input or output violates our policies. This dual-level assessment is essential for moderating both user queries and the model’s own generated outputs. At the heart of our system is an LLM that’s been fine-tuned from the Llama-3.1-8B-Instruct model. We trained this LLM with a particular focus on high-quality instruction tuning to optimize for safety judgment performance. 
 
 Llama 3.1 is licensed under the Llama 3.1 Community License, Copyright © Meta Platforms, Inc. All Rights Reserved.
 
@@ -24,16 +24,16 @@ Llama 3.1 is licensed under the Llama 3.1 Community License, Copyright © Meta P
 ## 📦 Installation
 To set up the environment, install all required dependencies by running the following commands from the root of the repository:
 ```
-python -m venv venv_roguard
-source venv_roguard/bin/activate 
+python -m venv venv_robloxguard
+source venv_robloxguard/bin/activate 
 pip install -r requirements.txt
 ```
 
 ## 🧠 Inference
 
-RoGuard 1.0 is a taxonomy-adaptive model, meaning it can generalize to any given taxonomy. For evaluation and benchmarking, we provide dataset-specific prompts in the prompt directory that reflect the taxonomy of each dataset. Users can also use their own datasets and corresponding taxonomies with RoGuard.
+Roblox Guard 1.0 is a taxonomy-adaptive model, meaning it can generalize to any given taxonomy. For evaluation and benchmarking, we provide dataset-specific prompts in the prompt directory that reflect the taxonomy of each dataset. Users can also use their own datasets and corresponding taxonomies with Roblox Guard.
 
-To evaluate RoGuard on a specific evaluation set, run the following command from the root of the repository, using the appropriate dataset configuration file:
+To evaluate Roblox Guard on a specific evaluation set, run the following command from the root of the repository, using the appropriate dataset configuration file:
 ```
 python inference.py --config configs/RoGuardEval.json
 ```
@@ -99,7 +99,7 @@ To run an evaluation, each config file (in JSON format) should follow this struc
 
 ## 📊 Model Benchmark Results
 
-We benchmark RoGuard 1.0 model on a comprehensive set of open-source datasets for both prompt and response, as well as on RoGuard-Eval. This allows us to evaluate our model on both in-domain and out-of-domain datasets. We report our results in terms of F-1 score for binary violating/non-violating classification. In the table below, we compare our performance with that of several well-known models. The RoGuard 1.0 outperforms other models while generalizing on out-of-domain datasets.
+We benchmark Roblox Guard 1.0 model on a comprehensive set of open-source datasets for both prompt and response, as well as on Roblox Guard-Eval. This allows us to evaluate our model on both in-domain and out-of-domain datasets. We report our results in terms of F-1 score for binary violating/non-violating classification. In the table below, we compare our performance with that of several well-known models. The Roblox Guard 1.0 outperforms other models while generalizing on out-of-domain datasets.
 - **Prompt Metrics**: These evaluate how well the model classifies or responds to potentially harmful **user inputs**
 - **Response Metrics**: These measure how well the model handles or generates **responses**, ensuring its outputs are safe and aligned.
 
@@ -108,12 +108,12 @@ We benchmark RoGuard 1.0 model on a comprehensive set of open-source datasets fo
 
 ## 📚 Citation
 
-If you are using RoGuard 1.0, please cite it as:
+If you are using Roblox Guard 1.0, please cite it as:
 
 ```bibtex
 @online{roblox2025roguard,
   author       = {Mahesh Nandwana and Adam McFarlin and Nishchaie Khanna},
-  title        = {State‑of‑the‑Art LLM Helps Safeguard Unlimited Text Generation on Roblox: RoGuard 1.0 — Advancing Safety With Robust Guardrails},
+  title        = {State‑of‑the‑Art LLM Helps Safeguard Unlimited Text Generation on Roblox: Roblox Guard 1.0 — Advancing Safety With Robust Guardrails},
   year         = {2025},
   month        = {Jul 22},
   howpublished = {\url{https://corp.roblox.com/newsroom/2025/07/roguard-advancing-safety-for-llms-with-robust-guardrails}},
