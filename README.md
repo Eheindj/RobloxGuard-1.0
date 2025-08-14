@@ -2,11 +2,11 @@
 
 
 <div align="center" style="line-height: 1;">
-  <a href="https://huggingface.co/Roblox/Llama-3.1-8B-Instruct-RoGuard-1.0" target="_blank"><img alt="Hugging Face" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-RoGuard 1.0-ffc107?color=ffc107&logoColor=white"/></a>
-  <a href="https://github.com/Roblox/RoGuard/blob/main/LICENSE"><img src="https://img.shields.io/badge/Model%20License-RAIL_MS-green" alt="Model License"></a>
+  <a href="https://huggingface.co/Roblox/Llama-3.1-8B-Instruct-RobloxGuard-1.0" target="_blank"><img alt="Hugging Face" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-RoGuard 1.0-ffc107?color=ffc107&logoColor=white"/></a>
+  <a href="[https://github.com/Roblox/RobloxGuard/blob/main/LICENSE](https://github.com/Roblox/RobloxGuard-1.0/blob/main/LICENSE](https://github.com/Roblox/RobloxGuard-1.0/blob/main/LICENSE)"><img src="https://img.shields.io/badge/Model%20License-RAIL_MS-green" alt="Model License"></a>
 </div>
 <div align="center" style="line-height: 1;">
-  <a href="https://huggingface.co/datasets/Roblox/RoGuard-Eval" target="_blank"><img alt="Hugging Face" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-RoGuardEval-ffc107?color=1783ff&logoColor=white"/></a>
+  <a href="https://huggingface.co/datasets/Roblox/RobloxGuard-Eval" target="_blank"><img alt="Hugging Face" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-RoGuardEval-ffc107?color=1783ff&logoColor=white"/></a>
   <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img src="https://img.shields.io/badge/Data%20License-CC_BY_NC_4.0-blue" alt="Data License"></a>
 </div>
 
@@ -44,21 +44,21 @@ Multiple configuration files are already prepared and ready to use in the `confi
 To run an evaluation, each config file (in JSON format) should follow this structure:
 ```
 {
-  "name": "RoGuardEval",                                        // Eval name
+  "name": "RobloxGuardEval",                                        // Eval name
 
-  "model_path": "Roblox/Llama-3.1-8B-Instruct-RoGuard-1.0",     // Our model path in huggingface
+  "model_path": "Roblox/Llama-3.1-8B-Instruct-RobloxGuard-1.0",     // Our model path in huggingface
   "base_model": "meta-llama/Meta-Llama-3.1-8B-Instruct",        // Base model used for fine-tuning
   "max_output_tokens": 100,                                     // Max tokens the model can generate
 
-  "eval_prompt": "prompts/RoGuardEval.txt",                     // Prompt template file, with placeholders for {prompt} and {response}
+  "eval_prompt": "prompts/RobloxGuardEval.txt",                     // Prompt template file, with placeholders for {prompt} and {response}
   "llm_output_field": "Response Safety",                        // Field in model output to evaluate for safety
   "llm_flagged_value": "unsafe",                                // Value indicating an unsafe response from the model
 
-  "eval_dataset": "Roblox/RoGuard-Eval",                        // Evaluation dataset on Hugging Face
+  "eval_dataset": "Roblox/RobloxGuard-Eval",                        // Evaluation dataset on Hugging Face
   "eval_label_field": "violation",                              // Field in the dataset that holds the ground truth label
   "eval_flagged_value": "true",                                 // Label value that indicates a violation (unsafe content)
 
-  "output_file": "outputs/RoGuardEval.csv"                      // Path to save the evaluation results as a CSV file
+  "output_file": "outputs/RobloxGuardEval.csv"                      // Path to save the evaluation results as a CSV file
 }
 ```
 
@@ -85,14 +85,14 @@ To run an evaluation, each config file (in JSON format) should follow this struc
 ├── configs/                # Evaluation configs for different datasets
 │   ├── aegis.json
 │   ├── ...
-│   └── RoGuardEval.json
+│   └── RobloxGuardEval.json
 ├── prompts/                # Prompt files for inference or evaluation
 │   ├── aegis.json
 │   ├── ...
-│   └── RoGuardEval.txt
+│   └── RobloxGuardEval.txt
 ├── outputs/                # Output CSVs for results and summaries
-│   ├── RoGuardEval.csv
-│   └── RoGuardEval_summary.csv
+│   ├── RobloxGuardEval.csv
+│   └── RobloxGuardEval_summary.csv
 ├── inference.py            # Script for running inference/evaluation
 └── requirements.txt        # Python dependencies
 ```
