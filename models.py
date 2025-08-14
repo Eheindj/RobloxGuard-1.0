@@ -1,4 +1,4 @@
-ROGUARD = "RoGuardEval"
+ROGUARD = "RobloxGuardEval"
 AEGIS = "aegis"
 AEGIS2 = "aegis2"
 OPENAI_MOD = "openai_mod"
