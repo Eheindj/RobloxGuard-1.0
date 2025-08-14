@@ -103,7 +103,7 @@ We benchmark Roblox Guard 1.0 model on a comprehensive set of open-source datase
 - **Prompt Metrics**: These evaluate how well the model classifies or responds to potentially harmful **user inputs**
 - **Response Metrics**: These measure how well the model handles or generates **responses**, ensuring its outputs are safe and aligned.
 
-![Newsroom_RoGuard_2508_Hero_Final-v2_Background](https://github.com/user-attachments/assets/224952dc-4860-43d9-8cba-92cdae5d5458)
+<img width="2000" height="1486" alt="Newsroom_RoGuard_2508_Hero_Final-v2_Background" src="https://github.com/user-attachments/assets/3e91cd72-fcec-4ec3-96b9-25b7ceb26247" />
 
 
 ## 📚 Citation
