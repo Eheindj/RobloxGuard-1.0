@@ -35,7 +35,7 @@ Roblox Guard 1.0 is a taxonomy-adaptive model, meaning it can generalize to any 
 
 To evaluate Roblox Guard on a specific evaluation set, run the following command from the root of the repository, using the appropriate dataset configuration file:
 ```
-python inference.py --config configs/RoGuardEval.json
+python inference.py --config configs/RobloxGuardEval.json
 ```
 
 ## ⚙️ Configuration
