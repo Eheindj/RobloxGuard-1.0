@@ -43,7 +43,7 @@ class ModelEvaluator:
             model_id = self.model_path.replace("https://huggingface.co/", "")
             is_hf_model = True
         elif "/" in self.model_path and not os.path.exists(self.model_path):
-            # Assume it's a Hugging Face model ID (e.g., "Roblox/RoGuard")
+            # Assume it's a Hugging Face model ID (e.g., "Roblox/RobloxGuard")
             model_id = self.model_path
             is_hf_model = True
         else:
