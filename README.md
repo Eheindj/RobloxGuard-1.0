@@ -111,7 +111,7 @@ We benchmark Roblox Guard 1.0 model on a comprehensive set of open-source datase
 If you are using Roblox Guard 1.0, please cite it as:
 
 ```bibtex
-@online{roblox2025roguard,
+@online{RobloxGuard-1.0,
   author       = {Mahesh Nandwana and Adam McFarlin and Nishchaie Khanna},
   title        = {State‑of‑the‑Art LLM Helps Safeguard Unlimited Text Generation on Roblox: Roblox Guard 1.0 — Advancing Safety With Robust Guardrails},
   year         = {2025},
