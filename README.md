@@ -116,6 +116,6 @@ If you are using Roblox Guard 1.0, please cite it as:
   title        = {State‑of‑the‑Art LLM Helps Safeguard Unlimited Text Generation on Roblox: Roblox Guard 1.0 — Advancing Safety With Robust Guardrails},
   year         = {2025},
   month        = {Jul 22},
-  howpublished = {\url{https://corp.roblox.com/newsroom/2025/07/roguard-advancing-safety-for-llms-with-robust-guardrails}},
+  howpublished = {\url{https://corp.roblox.com/newsroom/2025/07/roblox-guard-advancing-safety-for-llms-with-robust-guardrails}},
 }
 
