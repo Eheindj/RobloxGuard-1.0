@@ -3,7 +3,7 @@
 
 <div align="center" style="line-height: 1;">
   <a href="https://huggingface.co/Roblox/Llama-3.1-8B-Instruct-RobloxGuard-1.0" target="_blank"><img alt="Hugging Face" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-RobloxGuard 1.0-ffc107?color=ffc107&logoColor=white"/></a>
-  <a href="[https://github.com/Roblox/RobloxGuard/blob/main/LICENSE](https://github.com/Roblox/RobloxGuard-1.0/blob/main/LICENSE](https://github.com/Roblox/RobloxGuard-1.0/blob/main/LICENSE)"><img src="https://img.shields.io/badge/Model%20License-RAIL_MS-green" alt="Model License"></a>
+  <a href="https://github.com/Roblox/RobloxGuard-1.0/blob/main/LICENSE"><img src="https://img.shields.io/badge/Model%20License-RAIL_MS-green" alt="Model License"></a>
 </div>
 <div align="center" style="line-height: 1;">
   <a href="https://huggingface.co/datasets/Roblox/RobloxGuard-Eval" target="_blank"><img alt="Hugging Face" src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-RobloxGuardEval-ffc107?color=1783ff&logoColor=white"/></a>
