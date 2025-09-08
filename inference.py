@@ -236,9 +236,9 @@ class SafetyEvaluator:
                 self.csv_file.flush()
     
     def write_summary_csv(self, total_examples: int) -> None:
+        """Write a summary CSV file with final metrics."""
         summary_file = self.output_file.replace('.csv', '_summary.csv')
 
-        """Write a summary CSV file with final metrics."""
         if not self.has_labels:
             return  # Don't write summary when no labels are available
 
