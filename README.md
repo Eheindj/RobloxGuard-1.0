@@ -11,7 +11,7 @@
 </div>
 
 <div align="center" style="line-height: 1;">
-<a href="https://corp.roblox.com/newsroom/2025/07/roguard-advancing-safety-for-llms-with-robust-guardrails" target="_blank"><img src=https://img.shields.io/badge/Roblox-Blog-000000.svg?logo=Roblox height=22px></a>
+<a href="https://corp.roblox.com/newsroom/2025/07/roblox-guard-advancing-safety-for-llms-with-robust-guardrails" target="_blank"><img src=https://img.shields.io/badge/Roblox-Blog-000000.svg?logo=Roblox height=22px></a>
 <img src="https://img.shields.io/badge/ArXiv-Report (coming soon)-b5212f.svg?logo=arxiv" height="22px"><sub></sub>
 </div>
 <br />
