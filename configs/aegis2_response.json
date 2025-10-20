@@ -13,5 +13,5 @@
   "eval_label_field": "response_label",
   "eval_flagged_value": "unsafe",
 
-  "output_file": "outputs/aegis2_prompt.csv"
+  "output_file": "outputs/aegis2_response.csv"
 }
